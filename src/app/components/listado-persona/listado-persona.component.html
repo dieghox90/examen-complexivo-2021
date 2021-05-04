@@ -1,0 +1,23 @@
+<h1 class="text-center"> Listado</h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Cedula</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let persona of personas">
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.apellido}}</td>
+            <td>{{persona.cedula}}</td>
+            <td>
+                <button [routerLink]="['/editar/',persona.id]" class="btn btn-primary">Editar</button>
+                <button (click)="eliminar(persona.id)" class="btn btn-danger">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+  </table>
